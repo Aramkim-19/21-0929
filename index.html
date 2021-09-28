@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+
+	<style type="text/css">
+	body {margin: 0; text-align: center;}
+	
+	#back1 {width: 100vw; height: 100vh; background: url(A.gif); background-size: 100%; opacity: 70%;}
+	#back2 {width: 90vw; height: 90vh; position: absolute; top:10vh; left: 3vW;}
+	#c1 {position: absolute; top:-50px; left: 0.5vW;}
+	
+	
+	.B {background-color:transparent; border-radius: 20px; width: 300px;height: 50px;border-color: white;
+			font-family: 'Playfair Display' ; font-size: 1.5em; text-align: center; color: white;}
+	.B2 {background-color:transparent; border-radius: 20px; width: 150px;height: 30px;border-color: white;}
+	.t {font-size: 7em; color: white; opacity: 60%; font-weight: 600; font-family: 'Playfair Display'}
+
+	.L1 {position: absolute; top:30vh; left: 550px;}
+	.L2 {position: absolute; top:45vh; left: 550px;}
+	.L3 {position: absolute; top:60vh; left: 550px;}
+	.L4 {position: absolute; top:75vh; left: 550px;}
+
+	.v {position: absolute; top:-40px; left: 12vW; }
+
+	input[type=range]{-webkit-appearance: none; background: white; height:4px; width: 150px;}
+		input[type=range]::-webkit-slider-thumb
+		{-webkit-appearance: none;height: 20px;width: 20px;background: white; }
+	
+	</style>
+</head>	
+<body>
+	<div id="back1"></div>           
+		
+		<div id="back2">
+			<input id= "vol" type="range" maw="80" min="0" class="v">
+
+
+			<div class="t">Four Seasons</div>
+			
+
+			<button id="springBut" class="B L1">Spring Breeze</button>
+			<audio id="springSnd" src="spring breeze.mp3"></audio>
+
+			<button id="summerBut" class="B L2">Summer Rain</button>
+			<audio id="summerSnd" src="summer rain.mp3"></audio>
+
+			<button id="autumnBut" class="B L3">Autumn Night</button>
+			<audio id="autumnSnd" src="autumn night.mp3"></audio>
+
+			<button id="winterBut" class="B L4">Walking in the Winter</button>
+			<audio id="winterSnd" src="walking in the winter.mp3"></audio>
+
+			<script type="text/javascript">
+				vol.value = 100;
+				vol.oninput = function()
+				{ springSnd.volume = vol.value / 100;
+					summerSnd.volume = vol.value / 100;
+						autumnSnd.volume = vol.value / 100;
+
+							winterSnd.volume = vol.value / 100;
+						}
+
+
+				var state = "off";
+				springBut.onclick = function(){ 
+					if(state == "off"){ springSnd.play(); state = "on";
+						}
+					else if (state == "on") { springSnd.pause(); state = "off";}}
+
+
+				var state = "off";
+				summerBut.onclick = function(){ 
+					if(state == "off"){ summerSnd.play(); state = "on";
+						}
+					else if (state == "on") { summerSnd.pause(); state = "off";}}
+
+
+
+				var state = "off";
+				autumnBut.onclick = function(){ 
+					if(state == "off"){ autumnSnd.play(); state = "on";
+						}
+					else if (state == "on") { autumnSnd.pause(); state = "off";}}
+
+
+
+				var state = "off";
+				winterBut.onclick = function(){ 
+					if(state == "off"){ winterSnd.play(); state = "on";
+						}
+					else if (state == "on") { winterSnd.pause(); state = "off";}} 
+
+
+				
+				
+
+			</script>
+
+			
+
+			
+
+		
+		
+		<input type="color" id="c1" class="B2" >
+		<script type="text/javascript">
+			c1.oninput = function()
+			{document.body.style.background=c1.value;}
+
+		</script>
+		</div>
+	
+
+	
+
+	
+
+	
+
+</body>
+</html>
